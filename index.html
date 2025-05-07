@@ -113,6 +113,39 @@
   <!-- Script del juego -->
   <script src="./js/game.js"></script>
 
+  <!-- Script para cargar un modelo FBX de ejemplo -->
+  <script>
+    // Crear escena básica solo para cargar el FBX
+    const fbxScene = new THREE.Scene();
+    const fbxCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const fbxRenderer = new THREE.WebGLRenderer({ antialias: true });
+    fbxRenderer.setSize(window.innerWidth, window.innerHeight);
+    fbxRenderer.domElement.style.display = 'none'; // Ocultar el renderizador FBX
+    document.body.appendChild(fbxRenderer.domElement);
+
+    const fbxLight = new THREE.DirectionalLight(0xffffff, 1);
+    fbxLight.position.set(1, 1, 1).normalize();
+    fbxScene.add(fbxLight);
+
+    const fbxLoader = new THREE.FBXLoader();
+    fbxLoader.load('models/amy/Walking.fbx', function (object) {
+      object.scale.set(0.01, 0.01, 0.01); // Ajustar escala si es necesario
+      object.position.y = -1; // Ajustar altura
+      fbxScene.add(object);
+
+      animateFBX(); // Solo iniciar animación si se carga el modelo
+    }, undefined, function (error) {
+      console.error('Error al cargar el modelo FBX:', error);
+    });
+
+    fbxCamera.position.z = 5;
+
+    function animateFBX() {
+      requestAnimationFrame(animateFBX);
+      fbxRenderer.render(fbxScene, fbxCamera);
+    }
+  </script>
+
   <!-- Fallback si falla la hoja de estilos -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
