@@ -39,11 +39,11 @@ function updateHealthDisplays() {
 // Estados del villano
 const VILLAIN_STATES = {
     WALKING: 'Walking',
-    PUNCHING_BAG: 'Punching Bag',
-    FAST_RUN: 'Fast Run',
-    BRUTAL_ASSASSINATION: 'Brutal Assassination',
+    PUNCHING_BAG: 'Punching_Bag',
+    FAST_RUN: 'Fast_Run',
+    BRUTAL_ASSASSINATION: 'Brutal_Assassination',
     EXCITED: 'Excited',
-    RECEIVE_HIT: 'Receive Uppercut To The Face',
+    RECEIVE_HIT: 'Receive_Uppercut_To_The_Face',
     TAUNT: 'Taunt'
 };
 let villainState = VILLAIN_STATES.WALKING;
@@ -274,12 +274,12 @@ function loadVillainAnimations() {
     const fbxLoader = new THREE.FBXLoader();
     const animationFiles = [
         { name: VILLAIN_STATES.WALKING, file: 'models/amy/Walking.fbx' },
-        { name: VILLAIN_STATES.PUNCHING_BAG, file: 'models/amy/Punching Bag.fbx' },
-        { name: VILLAIN_STATES.FAST_RUN, file: 'models/amy/Fast Run.fbx' },
-        { name: VILLAIN_STATES.BRUTAL_ASSASSINATION, file: 'models/amy/Brutal Assassination.fbx' },
+        { name: VILLAIN_STATES.PUNCHING_BAG, file: 'models/amy/Punching_Bag.fbx' },
+        { name: VILLAIN_STATES.FAST_RUN, file: 'models/amy/Fast_Run.fbx' },
+        { name: VILLAIN_STATES.BRUTAL_ASSASSINATION, file: 'models/amy/Brutal_Assassination.fbx' },
         { name: VILLAIN_STATES.EXCITED, file: 'models/amy/Excited.fbx' },
-        { name: VILLAIN_STATES.RECEIVE_HIT, file: 'models/amy/receive uppercut to the face.fbx' },
-        { name: VILLAIN_STATES.TAUNT, file: 'models/amy/taunt.fbx' }
+        { name: VILLAIN_STATES.RECEIVE_HIT, file: 'models/amy/Receive_Uppercut_To_The_Face.fbx' },
+        { name: VILLAIN_STATES.TAUNT, file: 'models/amy/Taunt.fbx' }
 
 
     ];
